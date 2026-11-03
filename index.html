@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GK / GS Online Mock Test – RRB • SSC • Bihar Police</title>
+<meta name="description" content="Free GK / GS online mock tests in English and Hindi for RRB NTPC, RRB JE, SSC CGL, SSC CHSL, SSC JE and Bihar Police. Instant answers, certificate and weakness report.">
+<meta name="theme-color" content="#0b1f4d"><meta name="robots" content="index,follow">
+<meta property="og:title" content="GK / GS Online Mock Test – RRB • SSC • Bihar Police"><meta property="og:description" content="Bilingual mock tests with instant right/wrong, certificate and weakness report."><meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<body data-th="light">
+<div id="fl"></div><canvas id="cf"></canvas>
+<header><div class="logo">GK</div><div><h1>GK / GS Online Mock Test</h1><small>RRB NTPC • RRB JE • SSC CGL • CHSL • JE</small></div><div class="sp"></div>
+<button class="btn hide" id="hs" style="padding:8px 16px;background:linear-gradient(135deg,#12a150,#0e8a43)">Submit ✔</button><span class="cand hide" id="cand"></span><span id="timer" class="hide">60:00</span>
+<select id="lang" class="ib" style="width:auto;border-radius:18px;padding:0 8px;color:#fff;background:rgba(255,255,255,.14)"><option value="both" style="color:#000">EN + हिं</option><option value="en" style="color:#000">English</option><option value="hi" style="color:#000">हिंदी</option></select>
+<button class="ib" id="mu" title="Music">🎵</button><button class="ib" id="sf" title="Sound">🔊</button><button class="ib" id="dk" title="Dark mode">🌙</button><button class="ib hide" id="hm" title="Home">🏠</button></header>
+<div id="offline-status" role="status" aria-live="polite" style="display:none;position:sticky;top:0;z-index:40;text-align:center;padding:7px 12px;background:#14532d;color:white;font-size:13px">Offline mode — आपके सभी डाउनलोड किए गए टेस्ट उपलब्ध हैं।</div>
+<main class="wrap">
+<section id="s-home"><div class="hero"><svg class="bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><h2>Real Exam Practice • वास्तविक परीक्षा अभ्यास</h2><p>8 GK Sets + 2 Bihar Police Mocks × 100 Questions • English + हिंदी</p><p>Practice Mode: instant answers • Exam Mode: answers after submit / अभ्यास मोड: तुरंत उत्तर • परीक्षा मोड: सबमिट के बाद उत्तर</p><div class="tags"><span>⏱ 60 Min</span><span>📘 Practice + Exam Mode</span><span>🏆 Certificate</span><span>📊 Weakness Report</span></div></div>
+<div class="pn namebox" id="nb"><label for="nm">Candidate Name / परीक्षार्थी का नाम *</label><input id="nm" maxlength="40" placeholder="Apna poora naam likhein / Enter your full name" autocomplete="name"><span id="ne" style="color:var(--bd);font-size:13px;width:100%" class="hide">Naam likhe bina test start nahi hoga. / नाम लिखे बिना टेस्ट शुरू नहीं होगा।</span></div>
+<h2 style="margin:6px 0 12px">📘 GK / GS Practice Sets • सामान्य ज्ञान सेट</h2><div class="gd" id="cards"></div><h2 style="margin:26px 0 4px">🚔 Bihar Police (CSBC) Pattern Mock Tests • बिहार पुलिस मॉक टेस्ट</h2><p style="color:var(--mut);font-size:13px;margin:0 0 12px">100 Questions • 100 Marks • 2 Hours • Hindi, English, Maths, Science, Bihar GK &amp; GK. Original practice papers written on the CSBC pattern (not actual past papers). / CSBC पैटर्न पर बने मौलिक अभ्यास पेपर (वास्तविक पुराने पेपर नहीं)।</p><div class="gd" id="cards2"></div></section>
+<section id="s-ins" class="hide"><div class="pn ins"><h2 style="margin-top:0">Exam Instructions / परीक्षा निर्देश</h2><p id="who" style="font-weight:700"></p>
+<div class="mode-picker" aria-label="Select test mode">
+  <label class="mode-option"><input type="radio" name="testMode" value="practice" checked><span><b>📘 Practice Mode / अभ्यास मोड</b><small>हर उत्तर के तुरंत बाद सही/गलत और explanation देखें।</small></span></label>
+  <label class="mode-option"><input type="radio" name="testMode" value="exam"><span><b>⏱ Exam Mode / परीक्षा मोड</b><small>परीक्षा के दौरान उत्तर छिपे रहेंगे; submit के बाद पूरा result मिलेगा।</small></span></label>
+</div>
+<ol><li id="i1"></li><li id="i2">Practice Mode में उत्तर चुनते ही सही/गलत दिखेगा। Exam Mode में उत्तर submit होने तक नहीं दिखेगा।</li><li>Palette से किसी भी प्रश्न पर जा सकते हैं। Exam Mode में उत्तर बदल और प्रश्न Mark for Review कर सकते हैं।</li><li>Submit के बाद score, सही/गलत, छोड़े गए प्रश्न और answer review मिलेगा।</li></ol><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn g" id="ib">◀ Back</button><button class="btn" id="bg">Begin Exam ▶ परीक्षा शुरू करें</button></div></div></section>
+<section id="s-ex" class="hide"><div class="ex"><div class="pn" id="qp"></div>
+<aside class="pn side" id="sd"><b>Question Palette / प्रश्न सूची</b><div class="pal" id="pl"></div><div class="lg"><span><i style="background:var(--ok)"></i>Correct</span><span><i style="background:var(--bd)"></i>Wrong</span><span><i style="border:1px solid var(--ln)"></i>Pending</span></div>
+<div class="st"><div><b id="c1">0</b><span id="c1l">Correct</span></div><div><b id="c2">0</b><span id="c2l">Wrong</span></div><div><b id="c3">100</b><span id="c3l">Left</span></div></div><button class="btn b" id="sb" style="width:100%">Submit Test / जमा करें</button></aside></div>
+<button class="btn" id="fab">☰ Palette</button></section>
+<section id="s-rs" class="hide"><div id="ct"></div><div class="pn" style="margin-top:16px"><h3 style="margin-top:0">Performance by Topic / विषयवार प्रदर्शन</h3><div class="bars" id="br"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="pd">⬇ Certificate + Report (PDF)</button><button class="btn b" id="rv">Review Answers</button><button class="btn g" id="rt">Retry Set</button><button class="btn g" id="rh">All Sets</button></div>
+<p style="color:var(--mut);font-size:12px">PDF: button dabayein → print window mein <b>“Save as PDF”</b> chunein. / बटन दबाएँ → “Save as PDF” चुनें।</p></div></section>
+</main>
+  <!-- ================= PREMIUM FEEDBACK SYSTEM ================= -->
+
+<button class="pf-trigger" id="pfOpen">
+  <span class="pf-trigger-icon">✦</span>
+  Feedback
+  <span class="pf-trigger-dot"></span>
+</button>
+
+<div class="pf-overlay" id="pfOverlay">
+  <div class="pf-modal" role="dialog"
+       aria-modal="true" aria-labelledby="pfTitle">
+
+    <div class="pf-header">
+      <div class="pf-header-top">
+        <div class="pf-brand">
+          <div class="pf-brand-icon">GK</div>
+          <div>
+            <div class="pf-brand-name">GK / GS MOCK TEST</div>
+            <div class="pf-brand-sub">STUDENT FEEDBACK CENTER</div>
+          </div>
+        </div>
+        <button class="pf-close" id="pfClose"
+                aria-label="Close">×</button>
+      </div>
+
+      <div class="pf-heading">
+        <span class="pf-eyebrow">WE VALUE YOUR VOICE</span>
+        <h2 id="pfTitle">Help Us Improve! ✨</h2>
+        <p>Your feedback makes our platform better for every student.</p>
+      </div>
+      <div class="pf-decoration"></div>
+    </div>
+
+    <div class="pf-body">
+
+      <!-- Rating -->
+      <div class="pf-section">
+        <label class="pf-label">How was your experience?</label>
+        <div class="pf-rating" id="pfRating">
+          <button type="button" data-rating="1" aria-label="1 star">★</button>
+          <button type="button" data-rating="2" aria-label="2 stars">★</button>
+          <button type="button" data-rating="3" aria-label="3 stars">★</button>
+          <button type="button" data-rating="4" aria-label="4 stars">★</button>
+          <button type="button" data-rating="5" aria-label="5 stars">★</button>
+        </div>
+        <div class="pf-rating-text" id="pfRatingText">
+          Select your rating
+        </div>
+      </div>
+
+      <!-- Feedback Category -->
+      <div class="pf-section">
+        <label class="pf-label">What would you like to share?</label>
+        <div class="pf-categories" id="pfCategories">
+          <button type="button" data-category="Suggestion">💡 Suggestion</button>
+          <button type="button" data-category="Bug Report">🐛 Bug Report</button>
+          <button type="button" data-category="Question">❓ Question</button>
+          <button type="button" data-category="Appreciation">❤️ Appreciation</button>
+          <button type="button" data-category="Other">✦ Other</button>
+        </div>
+      </div>
+
+      <!-- Identity -->
+      <div class="pf-section">
+        <div class="pf-label-row">
+          <label class="pf-label">Your Details</label>
+          <span class="pf-optional">OPTIONAL</span>
+        </div>
+
+        <div class="pf-input-wrap">
+          <span>👤</span>
+          <input id="pfName" type="text"
+                 placeholder="Your name (optional)"
+                 maxlength="40">
+        </div>
+
+        <div class="pf-input-wrap">
+          <span>✉</span>
+          <input id="pfEmail" type="email"
+                 placeholder="Email address (optional)"
+                 maxlength="100">
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="pf-section">
+        <div class="pf-label-row">
+          <label class="pf-label" for="pfMessage">
+            Tell us more
+          </label>
+          <span class="pf-optional">REQUIRED</span>
+        </div>
+
+        <textarea id="pfMessage"
+                  maxlength="2000"
+                  rows="4"
+                  placeholder="Share your suggestions, problems or experience..."></textarea>
+
+        <div class="pf-counter">
+          <span>Be honest. Every suggestion matters!</span>
+          <span id="pfCount">0/2000</span>
+        </div>
+      </div>
+
+      <!-- Privacy -->
+      <div class="pf-privacy">
+        <span>🔒</span>
+        Your personal details are optional. Your feedback
+        will be shared only when you choose a contact method.
+      </div>
+
+      <!-- Submit -->
+      <div class="pf-submit-area">
+        <button type="button" class="pf-whatsapp" id="pfWhatsApp">
+          <span>◉</span>
+          Send via WhatsApp
+          <span>↗</span>
+        </button>
+
+        <button type="button" class="pf-email-btn" id="pfEmailBtn">
+          <span>✉</span>
+          Send via Email
+          <span>↗</span>
+        </button>
+      </div>
+
+      <p class="pf-note">
+        Choose either channel to prepare your feedback.
+        You can send it through both channels separately.
+      </p>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="pf-footer">
+      <div class="pf-developer-icon">S</div>
+      <div class="pf-developer-info">
+        <strong>Sumit Kumar</strong>
+        <span>Founder & Developer</span>
+      </div>
+      <div class="pf-footer-contact">
+        <a href="mailto:sumitkjmu09@gmail.com">Email</a>
+        <a href="https://wa.me/918969543599" target="_blank"
+           rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= END PREMIUM FEEDBACK ================= -->
+<footer class="pro-footer">
+
+  <div class="pf-container">
+
+    <!-- Brand -->
+    <div class="pf-brand-section">
+
+      <div class="pf-brand-logo">GK</div>
+
+      <div>
+        <h2>GK / GS MOCK TEST</h2>
+        <span class="pf-tagline">
+          YOUR PREPARATION. YOUR SUCCESS.
+        </span>
+      </div>
+
+    </div>
+
+    <p class="pf-description">
+      A dedicated online practice platform for competitive
+      examination aspirants. Practice smarter, improve your
+      knowledge and prepare confidently with bilingual
+      GK / GS mock tests.
+    </p>
+
+    <div class="pf-divider"></div>
+
+    <!-- Footer Links -->
+    <div class="pf-grid">
+
+      <div class="pf-column">
+        <h3>QUICK LINKS</h3>
+        <a href="#" data-footer-action="home">⌂ Home</a>
+        <a href="#" data-footer-action="sets">▤ Practice Sets</a>
+        <a href="#" data-footer-action="police">♧ Bihar Police Mocks</a>
+        <a href="#" data-footer-action="feedback">✉ Send Feedback</a>
+      </div>
+
+      <div class="pf-column">
+        <h3>EXAM CATEGORIES</h3>
+        <span>RRB NTPC</span>
+        <span>RRB JE</span>
+        <span>SSC CGL / CHSL</span>
+        <span>SSC JE</span>
+        <span>Bihar Police</span>
+      </div>
+
+      <div class="pf-column pf-contact">
+        <h3>CONTACT & SUPPORT</h3>
+
+        <a href="mailto:sumitkjmu09@gmail.com">
+          ✉ sumitkjmu09@gmail.com
+        </a>
+
+        <a href="https://wa.me/918969543599"
+           target="_blank" rel="noopener">
+          ☎ +91 8969543599
+        </a>
+
+        <span>📍 Jamui, Bihar, India</span>
+      </div>
+
+    </div>
+
+    <div class="pf-divider"></div>
+
+    <!-- Developer -->
+    <div class="pf-developer">
+
+      <div class="pf-developer-avatar">S</div>
+
+      <div class="pf-developer-details">
+        <span>DEVELOPED & MANAGED BY</span>
+        <strong>Sumit Kumar</strong>
+        <small>Founder & Developer</small>
+      </div>
+
+      <div class="pf-developer-badge">
+        ✦ Independent Project
+      </div>
+
+    </div>
+
+    <!-- Motto -->
+    <div class="pf-motto">
+      <strong>Built for Aspirants. Driven by Excellence.</strong>
+      <span>Your success is our motivation. ✨</span>
+    </div>
+
+    <!-- Copyright -->
+    <div class="pf-bottom">
+
+      <p>
+        © <span id="pfYear">2026</span>
+        GK / GS Online Mock Test.
+        All Rights Reserved.
+      </p>
+
+      <p class="pf-disclaimer">
+        Independent educational practice platform.
+        Not affiliated with RRB, SSC, CSBC or any
+        government authority.
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="js/exams/gk-sets.js"></script>
+<script src="js/exams/bihar-police.js"></script>
+<script src="js/exams/bpsc-prelims.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+  <script src="js/feedback.js"></script>
+  <script src="js/footer.js"></script>
+<script>
+(function(){const el=document.getElementById("offline-status");function update(){if(el){el.style.display=navigator.onLine?"none":"block";el.textContent=navigator.onLine?"":"Offline mode — आपके डाउनलोड किए गए टेस्ट उपलब्ध हैं।";}}window.addEventListener("online",update);window.addEventListener("offline",update);update();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}})();
+</script>
+</body></html>
